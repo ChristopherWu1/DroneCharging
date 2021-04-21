@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<html>
+<head>
+	<meta charset = "UTF-8"> <!-- Meta data -->
+	<meta name = "dropoff" content = "drop off drone home page">
+	<title> "Drop Off" </title>
+	<body>
+		<h1> Input your Credentials: </h1>
+		
+		<form action = "http://localhost/randomtesting/test2.php" method = "post">
+				<select name="station"> <!-- creates drop down menu -->
+					<option selected hidden value = ""> Select Station</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+				</select>
+				<div>
+					<label> Pleas Insert a 4-digit pin number. We will ask for it at drone pickup: </label>
+					<input name = "name" type = "number">
+				</div>
+				<div>
+					<input type = "radio" name = "charge" value = "N"> Normal Charging
+					<input type = "radio" name = "charge" value = 'S'> Super Charging
+				</div>
+				<select name="drone">
+					<option value="Mavik mini">Mavik mini 2</option>
+					<option value="Mavik pro 2">Mavik pro 2</option>
+					<option value="Mair Air 2">Mavik Air 2</option>
+					<option value="Parrot Anafi">Parrot Anafi</option>
+					<option value="Mavic 2 Zoom">Mavic 2 Zoom</option>
+					<option value="Ryze Tello">Ryze Tello</option>
+					<option value="Phantom 4 Pro V2.0">Phantom 4 Pro V2.0</option>
+					<option value="Inspire 2"> Inspire 2</option>
+				</select>
+				
+				<div>
+					<input type = "submit" value = "submit"> 
+				</div>
+				
+		
+		</form>
+		<div></div>
+		<a href = "home.html"> <button> Go Back </button> </a> 
+		<div></div>
+		
+	</body>
+	<footer>
+		<p> Kiosk Hours:  </p>
+		<p> Monday - Friday: 9:00AM - 9:00PM</p>
+		<p> Weekends: 8:00AM - 8:00PM </p>
+		<div class="footer">All Rights Reserved</div>
+	</footer>
+</html>

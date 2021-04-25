@@ -4,7 +4,7 @@
 <head>
 	<meta charset = "UTF-8"> <!-- Meta data -->
 	<meta name = "dropoff" content = "drop off drone home page">
-	<title> "Drop Off" </title>
+	<title> Drop Off </title>
 	<body>
 		<h1> Input your Credentials: </h1>
 		
@@ -77,17 +77,16 @@
 	{
 			if ($_SERVER["REQUEST_METHOD"] == "POST")
 			{
-				$station = $_POST['station'];
-				$pin = $_POST['pin'];
-				$charge = $_POST['charge'];
-				$drone = $_POST['drone'];
+				$station = $_POST['station'] ?? ""; //?? "" represents setting default to empty string
+				$pin = $_POST['pin'] ?? "";
+				$charge = $_POST['charge'] ?? "";
+				$drone = $_POST['drone'] ?? "";
 				if(empty($station) || empty($pin) ||  empty($charge) || empty($drone))
 				{
 					echo "<p> All the fields are required. Please Try Again </p>";
 				}
 				else
 				{
-				
 				echo $station;
 				echo "<br> ";
 				
@@ -99,7 +98,17 @@
 				
 				echo $drone; 
 				echo "<br>";
+				
+				if(strlen($pin) != 4)
+				{
+					echo "<p>Pin needs to be 4 numbers! Please try again /p>";
+				
 				}
+				
+				echo strlen($pin);//check length of $pin
+				}
+				
+				
 				
 			}
 		

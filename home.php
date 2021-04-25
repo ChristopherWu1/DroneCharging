@@ -8,11 +8,12 @@
 		<h1> Drone Recharging Station </h1>
 		<a href = "http://localhost/435project/pickup.php"> <button> Pick Up </button> </a> 
 		<div></div>
-		<a href = "dropoff.html"> <button> Drop Off </button> </a> 
+		<a href = "http://localhost/435project/dropoff.php"> <button> Drop Off </button> </a> 
 		<div></div>
 		
 	</body>
 	<footer>
+		<p> Please note the rates we have available: </p>
 		<?php 
 			$servername = "localhost";
 			$username = "root";
@@ -27,6 +28,17 @@
 			else
 			{
 				echo '<p>Connected successfully</p>';
+			}
+			
+			$sql = "Select * from charging_rates";
+			$result = $conn->query($sql);
+			if ($result->num_rows > 0) 
+			{
+				// output data of each row
+				while($row = $result->fetch_assoc()) 
+				{
+				echo "<p>" . $row["charge_type"].  "  costs  $" . $row["charge_rate"]. " per minute</p>";
+				}
 			}
 			mysqli_close($conn);
 		?>

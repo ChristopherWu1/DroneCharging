@@ -8,7 +8,7 @@
 	<body>
 		<h1> Input your Credentials: </h1>
 		
-		<form action = "http://localhost/randomtesting/test2.php" method = "post">
+		<form action = "" method = "post">
 				<select name="station"> <!-- creates drop down menu -->
 					<option selected hidden value = ""> Select Station</option>
 					<option value="1">1</option>
@@ -22,13 +22,14 @@
 				</select>
 				<div>
 					<label> Pleas Insert a 4-digit pin number. We will ask for it at drone pickup: </label>
-					<input name = "name" type = "number">
+					<input name = "pin" type = "number">
 				</div>
 				<div>
 					<input type = "radio" name = "charge" value = "N"> Normal Charging
 					<input type = "radio" name = "charge" value = 'S'> Super Charging
 				</div>
 				<select name="drone">
+					<option selected hidden value = ""> Select Drone</option>
 					<option value="Mavik Mini 2">Mavik Mini 2</option>
 					<option value="Mavik Pro 2">Mavik Pro 2</option>
 					<option value="Mair Air 2">Mavik Air 2</option>
@@ -40,7 +41,7 @@
 				</select>
 				
 				<div>
-					<input type = "submit" value = "submit"> 
+					<input type = "submit" value = "Submit"> 
 				</div>
 				
 		
@@ -59,5 +60,49 @@
 </html>
 
 <?php
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$dbname = "dronecharge";
+	$conn = mysqli_connect($servername, $username, $password,$dbname);
+	
+	//$station = $pin = $charge = $drone = "";
+	//$charge = '';
+	
+	if (!$conn) 
+	{
+		die("Connection failed: " . mysqli_connect_error());
+	}
+	else
+	{
+			if ($_SERVER["REQUEST_METHOD"] == "POST")
+			{
+				$station = $_POST['station'];
+				$pin = $_POST['pin'];
+				$charge = $_POST['charge'];
+				$drone = $_POST['drone'];
+				if(empty($station) || empty($pin) ||  empty($charge) || empty($drone))
+				{
+					echo "<p> All the fields are required. Please Try Again </p>";
+				}
+				else
+				{
+				
+				echo $station;
+				echo "<br> ";
+				
+				echo $pin;
+				echo "<br>";
+		
+				echo $charge;
+				echo "<br>";
+				
+				echo $drone; 
+				echo "<br>";
+				}
+				
+			}
+		
+	}
 
 ?>

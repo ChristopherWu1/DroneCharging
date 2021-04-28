@@ -5,3 +5,8 @@
 4. The code in this file goes into this directory localdisk/xampp/htdocs
 5. Lauch Admin for MYSQL, that's the database.
 6. To load project, use http://localhost/435project/home.php
+
+
+4/27/21
+-Added new column in station transaction_id
+-pickup is halfway done

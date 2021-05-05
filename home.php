@@ -3,7 +3,7 @@
 <head>
 	<meta charset = "UTF-8"> <!-- Meta data -->
 	<meta name = "home" content = "homepage of project">
-	<title> "homepage" </title>
+	<title> Homepage </title>
 	<body>
 		<h1> Drone Recharging Station </h1>
 		<a href = "http://localhost/435project/pickup.php"> <button> Pick Up </button> </a> 
@@ -27,7 +27,7 @@
 			}
 			else
 			{
-				echo '<p>Connected successfully</p>';
+				//echo '<p>Connected successfully</p>';
 			}
 			
 			$sql = "Select * from charging_rates";
@@ -37,7 +37,7 @@
 				// output data of each row
 				while($row = $result->fetch_assoc()) 
 				{
-				echo "<p>" . $row["charge_type"].  "  costs  $" . $row["charge_rate"]. " per minute</p>";
+				echo "<p>" . $row["charge_type"].  "  costs  $" . $row["charge_rate"]." for " . $row["charge_speed"] ." mAh per minute</p>";
 				}
 			}
 			mysqli_close($conn);

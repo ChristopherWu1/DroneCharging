@@ -86,7 +86,7 @@ for (i = 0; i < close.length; i++) {
 				<div>
 					<input type = "radio" name = "charge" value = "Normal"> Normal Charging
 					<input type = "radio" name = "charge" value = 'Super'> Super Charging
-					<?php 
+					<?php  // Outputs value of charging
 						$servername = "localhost";
 						$username = "root";
 						$password = "";
@@ -168,6 +168,20 @@ for (i = 0; i < close.length; i++) {
 				$pin = $_POST['pin'] ?? "";
 				$charge = $_POST['charge'] ?? "";
 				$drone = $_POST['drone'] ?? "";
+				echo "<p> Hello </p>";
+				
+					echo $station;
+					echo "<br> ";
+					
+					echo $pin;
+					echo "<br>";
+			
+					echo $charge;
+					echo "<br>";
+					
+					echo $drone; 
+					echo "<br>";
+				
 				if(empty($station) || empty($pin) ||  empty($charge) || empty($drone)) // if any fields are empty
 				{
 					//echo "<p> All the fields are required. Please Try Again </p>";
@@ -207,6 +221,13 @@ for (i = 0; i < close.length; i++) {
 					{
 						echo strlen($pin);//check length of $pin	
 						
+						$station_availability = "";
+						$station_length = "";
+						$station_width = "";
+						$station_height = "";
+						$drone_length = "";
+						$drone_width = "";
+						$drone_height = "";
 						
 						$sql = "Select * from station where Station_id = '$station' ";//get station values
 						$result = $conn->query($sql);

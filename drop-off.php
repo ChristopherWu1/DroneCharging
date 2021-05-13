@@ -868,7 +868,7 @@ for (i = 0; i < close.length; i++) {
 									{
 										//update station availibility, transaction_ID
 										//echo "<p> test6 </p>";
-										$sql = "UPDATE station SET Station_available = 'N', Transaction_ID = (SELECT max(Transaction_ID) from transaction) WHERE Station_id = '$station';";
+										$sql = "UPDATE station SET Station_available = 'N' where Station_id = '$station';";
 										//echo "<p> test7 </p>";
 										if(mysqli_query($conn, $sql))
 										{

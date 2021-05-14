@@ -2,6 +2,10 @@
 <html>
 <head>
 <style>
+* {
+ font-family: Helvetica;
+}
+
 /* Styles the buttons */
 .button {
   border: none;
@@ -125,7 +129,8 @@ background-color: #ff007f;
 <h1>Welcome to our drone charging station!</h1>
 <p> Select whether you're dropping off your drone or picking up your drone:</p>
 <a href="http://localhost/435project/pick-up.php" class ="button button1">Pick-up</a>
-<a href="http://localhost/435project/drop-off.php" class ="button button2">Drop-off</a>
+<a href="http://localhost/435project/drop-off.php" class ="button button2">Drop-off</a> 
+<!--<a href="http://localhost/435project/payment.php" class ="button button2">payment</a>  comment out later -->
 <p> Please note the rates we have available: </p>
 		<?php 
 			$servername = "localhost";

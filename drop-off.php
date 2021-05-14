@@ -3,6 +3,9 @@
 <head>
 <style>
 /* Styles the non-input buttons */
+ * {
+ font-family: Helvetica;
+}
 .button {
   border: none;
   color: white;
@@ -187,14 +190,21 @@ for (i = 0; i < close.length; i++) {
 							else
 							{
 								//echo '<p>Connected successfully</p>';
-								$sql = "Select Station_length,Station_width,Station_height from station where Station_id = 1 ";
+								$sql = "Select Station_length,Station_width,Station_height,Station_available from station where Station_id = 1 ";
 								$result = $conn->query($sql);
 								if ($result->num_rows > 0) 
 								{
 									// output data of each row
 									while($row = $result->fetch_assoc()) 
 									{
-									echo " Dimensions: " . $row["Station_length"].  "X" . $row["Station_width"]. "X" . $row["Station_height"];
+										if($row["Station_available"] == "Y")
+										{
+											echo " Dimensions: " . $row["Station_length"].  "X" . $row["Station_width"]. "X" . $row["Station_height"] . " Available" ;
+										}
+										else
+										{
+											echo " Dimensions: " . $row["Station_length"].  "X" . $row["Station_width"]. "X" . $row["Station_height"] . " Not Available" ;
+										}
 									}
 								}
 							}
@@ -218,15 +228,22 @@ for (i = 0; i < close.length; i++) {
 							else
 							{
 								//echo '<p>Connected successfully</p>';
-								$sql = "Select Station_length,Station_width,Station_height from station where Station_id = 2 ";
+								$sql = "Select Station_length,Station_width,Station_height,Station_available from station where Station_id = 2 ";
 								$result = $conn->query($sql);
 								if ($result->num_rows > 0) 
 								{
 									// output data of each row
 									while($row = $result->fetch_assoc()) 
 									{
-									echo " Dimensions: " . $row["Station_length"].  "X" . $row["Station_width"]. "X" . $row["Station_height"];
-									}
+										if($row["Station_available"] == "Y")
+										{
+											echo " Dimensions: " . $row["Station_length"].  "X" . $row["Station_width"]. "X" . $row["Station_height"] . " Available" ;
+										}
+										else
+										{
+											echo " Dimensions: " . $row["Station_length"].  "X" . $row["Station_width"]. "X" . $row["Station_height"] . " Not Available" ;
+										}
+									}	
 								}
 							}
 							
@@ -249,14 +266,21 @@ for (i = 0; i < close.length; i++) {
 							else
 							{
 								//echo '<p>Connected successfully</p>';
-								$sql = "Select Station_length,Station_width,Station_height from station where Station_id = 3 ";
+								$sql = "Select Station_length,Station_width,Station_height,Station_available from station where Station_id = 3 ";
 								$result = $conn->query($sql);
 								if ($result->num_rows > 0) 
 								{
 									// output data of each row
 									while($row = $result->fetch_assoc()) 
 									{
-									echo " Dimensions: " . $row["Station_length"].  "X" . $row["Station_width"]. "X" . $row["Station_height"];
+										if($row["Station_available"] == "Y")
+										{
+											echo " Dimensions: " . $row["Station_length"].  "X" . $row["Station_width"]. "X" . $row["Station_height"] . " Available" ;
+										}
+										else
+										{
+											echo " Dimensions: " . $row["Station_length"].  "X" . $row["Station_width"]. "X" . $row["Station_height"] . " Not Available" ;
+										}
 									}
 								}
 							}
@@ -280,14 +304,21 @@ for (i = 0; i < close.length; i++) {
 							else
 							{
 								//echo '<p>Connected successfully</p>';
-								$sql = "Select Station_length,Station_width,Station_height from station where Station_id = 4 ";
+								$sql = "Select Station_length,Station_width,Station_height,Station_available from station where Station_id = 4 ";
 								$result = $conn->query($sql);
 								if ($result->num_rows > 0) 
 								{
 									// output data of each row
 									while($row = $result->fetch_assoc()) 
 									{
-									echo " Dimensions: " . $row["Station_length"].  "X" . $row["Station_width"]. "X" . $row["Station_height"];
+										if($row["Station_available"] == "Y")
+										{
+											echo " Dimensions: " . $row["Station_length"].  "X" . $row["Station_width"]. "X" . $row["Station_height"] . " Available" ;
+										}
+										else
+										{
+											echo " Dimensions: " . $row["Station_length"].  "X" . $row["Station_width"]. "X" . $row["Station_height"] . " Not Available" ;
+										}
 									}
 								}
 							}
@@ -311,14 +342,21 @@ for (i = 0; i < close.length; i++) {
 							else
 							{
 								//echo '<p>Connected successfully</p>';
-								$sql = "Select Station_length,Station_width,Station_height from station where Station_id = 5 ";
+								$sql = "Select Station_length,Station_width,Station_height,Station_available from station where Station_id = 5 ";
 								$result = $conn->query($sql);
 								if ($result->num_rows > 0) 
 								{
 									// output data of each row
 									while($row = $result->fetch_assoc()) 
 									{
-									echo " Dimensions: " . $row["Station_length"].  "X" . $row["Station_width"]. "X" . $row["Station_height"];
+										if($row["Station_available"] == "Y")
+										{
+											echo " Dimensions: " . $row["Station_length"].  "X" . $row["Station_width"]. "X" . $row["Station_height"] . " Available" ;
+										}
+										else
+										{
+											echo " Dimensions: " . $row["Station_length"].  "X" . $row["Station_width"]. "X" . $row["Station_height"] . " Not Available" ;
+										}
 									}
 								}
 							}
@@ -342,14 +380,21 @@ for (i = 0; i < close.length; i++) {
 							else
 							{
 								//echo '<p>Connected successfully</p>';
-								$sql = "Select Station_length,Station_width,Station_height from station where Station_id = 6 ";
+								$sql = "Select Station_length,Station_width,Station_height,Station_available from station where Station_id = 6 ";
 								$result = $conn->query($sql);
 								if ($result->num_rows > 0) 
 								{
 									// output data of each row
 									while($row = $result->fetch_assoc()) 
 									{
-									echo " Dimensions: " . $row["Station_length"].  "X" . $row["Station_width"]. "X" . $row["Station_height"];
+										if($row["Station_available"] == "Y")
+										{
+											echo " Dimensions: " . $row["Station_length"].  "X" . $row["Station_width"]. "X" . $row["Station_height"] . " Available" ;
+										}
+										else
+										{
+											echo " Dimensions: " . $row["Station_length"].  "X" . $row["Station_width"]. "X" . $row["Station_height"] . " Not Available" ;
+										}
 									}
 								}
 							}
@@ -373,14 +418,21 @@ for (i = 0; i < close.length; i++) {
 							else
 							{
 								//echo '<p>Connected successfully</p>';
-								$sql = "Select Station_length,Station_width,Station_height from station where Station_id = 7 ";
+								$sql = "Select Station_length,Station_width,Station_height,Station_available from station where Station_id = 7 ";
 								$result = $conn->query($sql);
 								if ($result->num_rows > 0) 
 								{
 									// output data of each row
 									while($row = $result->fetch_assoc()) 
 									{
-									echo " Dimensions: " . $row["Station_length"].  "X" . $row["Station_width"]. "X" . $row["Station_height"];
+										if($row["Station_available"] == "Y")
+										{
+											echo " Dimensions: " . $row["Station_length"].  "X" . $row["Station_width"]. "X" . $row["Station_height"] . " Available" ;
+										}
+										else
+										{
+											echo " Dimensions: " . $row["Station_length"].  "X" . $row["Station_width"]. "X" . $row["Station_height"] . " Not Available" ;
+										}
 									}
 								}
 							}
@@ -404,14 +456,21 @@ for (i = 0; i < close.length; i++) {
 							else
 							{
 								//echo '<p>Connected successfully</p>';
-								$sql = "Select Station_length,Station_width,Station_height from station where Station_id = 8 ";
+								$sql = "Select Station_length,Station_width,Station_height,Station_available from station where Station_id = 8 ";
 								$result = $conn->query($sql);
 								if ($result->num_rows > 0) 
 								{
 									// output data of each row
 									while($row = $result->fetch_assoc()) 
 									{
-									echo " Dimensions: " . $row["Station_length"].  "X" . $row["Station_width"]. "X" . $row["Station_height"];
+										if($row["Station_available"] == "Y")
+										{
+											echo " Dimensions: " . $row["Station_length"].  "X" . $row["Station_width"]. "X" . $row["Station_height"] . " Available" ;
+										}
+										else
+										{
+											echo " Dimensions: " . $row["Station_length"].  "X" . $row["Station_width"]. "X" . $row["Station_height"] . " Not Available" ;
+										}
 									}
 								}
 							}
